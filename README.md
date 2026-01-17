@@ -81,13 +81,13 @@ PulsePoint AI automates the entire process:
 ### Installation
 
 #### 1. Clone the Repository
-```bash
+\`\`\`bash
 git clone https://github.com/yourusername/pulsepoint-ai.git
 cd pulsepoint-ai
-```
+\`\`\`
 
 #### 2. Frontend Setup
-```bash
+\`\`\`bash
 # Install dependencies
 npm install
 
@@ -95,11 +95,11 @@ npm install
 cp .env.example .env.local
 
 # Edit .env.local with your API keys
-```
+\`\`\`
 
 #### 3. Environment Variables
 Create a `.env.local` file:
-```env
+\`\`\`env
 # API Configuration
 NEXT_PUBLIC_API_URL=http://localhost:3000
 NEXT_PUBLIC_ENVIRONMENT=development
@@ -110,12 +110,12 @@ OPENAI_API_KEY=your_whisper_key_here
 
 # Backend Service
 BACKEND_URL=http://localhost:8000
-```
+\`\`\`
 
 #### 4. Run Development Server
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 Visit http://localhost:3000
 
@@ -123,7 +123,7 @@ Visit http://localhost:3000
 
 For production video processing, set up the Python backend:
 
-```bash
+\`\`\`bash
 # Navigate to backend directory
 cd backend
 
@@ -136,10 +136,10 @@ pip install -r requirements.txt
 
 # Run FastAPI server
 uvicorn main:app --reload --port 8000
-```
+\`\`\`
 
 #### Backend Requirements (requirements.txt)
-```
+\`\`\`
 fastapi==0.104.1
 uvicorn==0.24.0
 python-multipart==0.0.6
@@ -152,7 +152,7 @@ opencv-python==4.8.1.78
 pillow==10.1.0
 numpy==1.26.2
 scipy==1.11.4
-```
+\`\`\`
 
 ---
 
@@ -189,7 +189,7 @@ scipy==1.11.4
 
 ### Example Workflow
 
-```
+\`\`\`
 Input: 60-minute lecture (MP4, 1.2GB)
        ↓
 Processing: ~3-5 minutes
@@ -199,7 +199,7 @@ Output: 3-5 clips × 60-seconds
         - AI captions and hooks
         - Emotion scores
         - Ready to upload
-```
+\`\`\`
 
 ---
 
@@ -207,7 +207,7 @@ Output: 3-5 clips × 60-seconds
 
 ### Emotional Peak Detection
 
-```
+\`\`\`
 1. Audio Analysis (Librosa)
    - Detect spikes in audio intensity
    - Identify speaking pace changes
@@ -222,11 +222,11 @@ Output: 3-5 clips × 60-seconds
    - Merge audio + sentiment scores
    - Rank moments by potential virality
    - Select top 3-5 peaks
-```
+\`\`\`
 
 ### Smart Vertical Cropping
 
-```
+\`\`\`
 1. Face Detection (MediaPipe)
    - Locate speaker face in frame
    - Track face position over time
@@ -240,11 +240,11 @@ Output: 3-5 clips × 60-seconds
    - Apply crop transformation
    - Maintain video quality
    - Export vertical format
-```
+\`\`\`
 
 ### Caption Generation
 
-```
+\`\`\`
 1. Transcription (Whisper)
    - Convert audio to text with timestamps
    - Get precise word-level timing
@@ -258,7 +258,7 @@ Output: 3-5 clips × 60-seconds
    - Calculate caption timing
    - Apply text overlays
    - Render with high contrast
-```
+\`\`\`
 
 ---
 
@@ -266,7 +266,7 @@ Output: 3-5 clips × 60-seconds
 
 ### System Design
 
-```
+\`\`\`
 ┌─────────────────────────────────────────────────────────┐
 │                    Frontend (React/Next.js)              │
 │  • Video Upload Interface                               │
@@ -299,11 +299,11 @@ Output: 3-5 clips × 60-seconds
     │  • Face Detection (MediaPipe)                       │
     │  • Video Processing (MoviePy)                       │
     └─────────────────────────────────────────────────────┘
-```
+\`\`\`
 
 ### File Structure
 
-```
+\`\`\`
 pulsepoint-ai/
 ├── app/
 │   ├── page.tsx                 # Main interface
@@ -330,7 +330,7 @@ pulsepoint-ai/
 │   │   └── video_editing.py
 │   └── requirements.txt
 └── README.md
-```
+\`\`\`
 
 ---
 
@@ -343,7 +343,7 @@ pulsepoint-ai/
 - **File Size**: 2.3 GB
 
 ### Output
-```
+\`\`\`
 Clip 1: "The Breakthrough"
   Duration: 60s | Emotion: 95% | Time: 12:30-13:30
   Caption: "The moment everything changed"
@@ -355,7 +355,7 @@ Clip 2: "Hidden Wisdom"
 Clip 3: "Standing Ovation"
   Duration: 60s | Emotion: 92% | Time: 58:45-59:45
   Caption: "Pure inspiration in 60 seconds"
-```
+\`\`\`
 
 All clips in vertical 9:16 format, ready for:
 - TikTok
@@ -369,7 +369,7 @@ All clips in vertical 9:16 format, ready for:
 
 ### Video Processing Parameters
 
-```javascript
+\`\`\`javascript
 // config/processing.js
 export const PROCESSING_CONFIG = {
   // Clip settings
@@ -390,7 +390,7 @@ export const PROCESSING_CONFIG = {
   transcriptionTimeout: 300000, // 5 minutes
   totalProcessingTimeout: 600000, // 10 minutes
 }
-```
+\`\`\`
 
 ---
 
@@ -415,7 +415,7 @@ export const PROCESSING_CONFIG = {
 - ✅ GDPR compliant processing
 
 ### Production Deployment
-```bash
+\`\`\`bash
 # Environment security
 - Never commit API keys
 - Use environment variable management
@@ -423,7 +423,7 @@ export const PROCESSING_CONFIG = {
 - Enable rate limiting
 - Add monitoring and logging
 - Regular security audits
-```
+\`\`\`
 
 ---
 
@@ -515,7 +515,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 If you use PulsePoint AI in your research or project, please cite:
 
-```bibtex
+\`\`\`bibtex
 @software{pulsepoint_ai_2024,
   title={PulsePoint AI: Automated Viral Moment Extraction from Long-Form Video},
   author={Your Name},
