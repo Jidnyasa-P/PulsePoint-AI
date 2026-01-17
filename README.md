@@ -8,6 +8,10 @@
 
 **PulsePoint AI** is an intelligent video processing platform that automatically extracts viral-worthy 60-second clips from long-form content (lectures, podcasts, workshops). Using AI-powered analysis, it identifies "emotional peaks," converts video to vertical format, and generates engaging captions—transforming hours of content into shareable social media clips.
 
+### Demo
+
+https://github.com/user-attachments/assets/e76ba388-3d88-45b4-bded-ccfd42f70536
+
 ### Problem Statement
 
 Content creators produce valuable long-form videos, but modern audiences consume information in 60-second bursts. High-impact moments are buried in lengthy footage, making them inaccessible and invisible to potential viewers. Manual extraction is time-consuming and inefficient.
